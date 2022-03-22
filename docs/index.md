@@ -17,9 +17,9 @@ We made use of information available from [Wikidata](https://www.wikidata.org/wi
 
 Below, you can see a couple of sample quotations from the dataset and a plot of the distribution of quotations from 2015 to 2020.
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/dataframe-sample.png"><img style="width:60%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/dataframe-sample.png"></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/figures/dataframe-sample.png"><img style="width:60%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/figures/dataframe-sample.png"></a></div>
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/quotes-accross-time.png"><img style="width:100%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/quotes-accross-time.png"></a></div>
+<div style="text-align:center"><a href="/figures/quotes-accross-time.png"><img style="width:100%" src="/figures/quotes-accross-time.png"></a></div>
 
 ## A deep dive into the data: what are the trending topics?
 
