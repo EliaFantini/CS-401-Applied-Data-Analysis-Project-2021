@@ -17,19 +17,19 @@ We made use of information available from [Wikidata](https://www.wikidata.org/wi
 
 Below, you can see a couple of sample quotations from the dataset and a plot of the distribution of quotations from 2015 to 2020.
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/docs/figures/dataframe-sample.png"><img style="width:60%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/docs/figures/dataframe-sample.png"></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/dataframe-sample.png"><img style="width:60%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/dataframe-sample.png"></a></div>
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/docs/figures/quotes-accross-time.png"><img style="width:100%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/docs/figures/quotes-accross-time.png"></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/quotes-accross-time.png"><img style="width:100%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/quotes-accross-time.png"></a></div>
 
 ## A deep dive into the data: what are the trending topics?
 
 Previous to any more profound analysis, the most important thing we could do was understand what the two parties talked about. What are the main problems, topics, trends, and events of the United States? How do politicians address them? First, let’s look at the “big words”, those words that are always used and that you will most likely run into if you’re reading a sentence told by whatever politician.
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/figures/wordcloud_all.png"><img style="width:75%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/figures/wordcloud_all.png"/></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/wordcloud_all.png"><img style="width:75%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/wordcloud_all.png"/></a></div>
 
 Then, we try to look for a difference between the two parties. We divide the quotes into two groups based on the party affiliation of the speaker. Then we take the 500 most common words from the first wordcloud, and compare their frequencies between the parties. We divide the per-party word frequencies by the global word frequencies to obtain the relative frequencies per party. We then plot two new wordclouds, now using the relative frequenies instead of total word counts as the weights.
  
-<div style="text-align:center"><a href="/docs/figures/wordcloud_comparison.png"><img style="width:100%" src="/docs/figures/wordcloud_comparison.png"></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/wordcloud_comparison.png"><img style="width:100%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/wordcloud_comparison.png"></a></div>
 
 The wordclouds clearly visualize the difference in the vocabulary used by the members of the two American parties. 
 
@@ -50,19 +50,19 @@ To achieve that, we first tried to use a transfer-learning approach: train a cla
 We then proceeded with unsupervised clustering using [`BERTopic`](https://github.com/MaartenGr/BERTopic). This topic modeling technique leverages transformers and c-TF-IDF to create dense clusters allowing for easily interpretable topics while keeping essential words in the topic descriptions.
 The following plot summarizes the interesting results we obtained from clustering.
 
-<div style="text-align:center"><a href="/figures/topic-frequency-by-party.png"><img style="width:90%" src="/figures/topic-frequency-by-party.png"/></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/topic-frequency-by-party.png"><img style="width:90%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/topic-frequency-by-party.png"/></a></div>
 
 The first thing worth noting from the stacked plot is the x-axis, reporting the macro-topics. Since this is the result of unsupervised clustering, those are the most frequent themes covered by representatives in their speeches. In the overall top 3, we have racial discrimination, nuclear weapons, and Russiagate.
 
 However, what is much more interesting is the difference in the most critical talking points between the two parties. Democrats put racial discrimination first, whereas Republicans talked more than everything else about Russiagate. Trying to explain why that is and the social reasons behind such differences is probably incredibly hard and out of the target of this data story. For this reason, we try to explain the top topic of Democrats as superficial proof of the validity of our findings. Why racial discrimination is a central theme of discussion needs probably no explanation, especially given the 2020 events, but why Democrats talk more about it might be explained by this plot taken from [Pew Research Center’s research](https://www.pewresearch.org/politics/2017/10/05/4-race-immigration-and-discrimination/).
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/pew1.png"><img style="width:40%" src="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/pew1.png" /></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/pew1.png"><img style="width:40%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/pew1.png" /></a></div>
 
 Such finding shows that Democrats are more willing to change things to give blacks equal rights with whites; therefore, it makes sense that their politicians speak more about the problem.
 
 Let’s now see things more in detail, looking at the top 10 topics from the two parties during the years.
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/topic-per-year.png"><img style="width:100%" src="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/topics-per-year.png"/></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/topic-per-year.png"><img style="width:100%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/topics-per-year.png"/></a></div>
 
 First, we notice a spike in the `Nuclear Weapons` topics in 2015 on the Democrat side, likely referring to the [Joint Comprehensive Plan of Action](https://en.wikipedia.org/wiki/Joint_Comprehensive_Plan_of_Action), the nuclear deal with Iran, which Obama helped negotiate. As expected, in the following year, we see the rise of `Hillary Clinton` due to the [2016 presidential election](https://en.wikipedia.org/wiki/2016_United_States_presidential_election). Insight of that, Republicans talked more about immigration from the `Mexican Border` (we remember Trump's wall on the Mexican border was a strong point in his campaign). At the same time, Democrats seemed more focused on `Racial Discrimination` and the middle east (`ISIS` and `Israel`). By the end of the year, we see the rise of what would become the most talked about the following year, the controversial `RussiaGate`([Special Counsel investigation](https://en.wikipedia.org/wiki/Special_Counsel_investigation_(2017–2019))). This was an investigation into Russian interference in the 2016 United States elections, links between associates of Donald Trump and Russian officials, and possible obstruction of justice by Trump and his associates. From 2017 we also notice `North Korea`, which reminds us of the conflict between Donald Trump and Kim Jong-un and their trade of insults over the web. Furthermore, in 2017 the Atlantic hurricane season was an extremely active one and the costliest on record, with a damage total of at least $294.92 billion, in line with what's shown in the plot. Then, in 2019, as the `RussiaGate` started to quieten, another conflicting topic rose: Black Lives Matter, as testified by the topic `Racial Discrimination`. While it is a predominant topic in democrats' quotes, we can see that the Republicans tended to overlook it. Finally, in 2020, we witnessed the outbreak of the covid epidemic (`Healthcare` topic).
 
@@ -78,11 +78,11 @@ To achieve that, we will make use of two sentiment analysis tools:
 
 Both tools will assign to a sentence a score between -1 and 1, where -1 means a highly negative sentiment, whereas +1 means a highly positive one. A score of 0 represents neutrality. Let's first have a look at the global sentiment distributions that the models produced:
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/sentiment-distribution-all.png"><img style="width:80%" src="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/sentiment-distribution-all.png"></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/sentiment-distribution-all.png"><img style="width:80%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/sentiment-distribution-all.png"></a></div>
 
 The two distributions are very different from each other. The sentiment predicted by `VADER` has a large peak around the 0 mark, which means that it struggled to attribute any kind of sentiment to a large portion of the quotations. Apart from the peak, the distribution looks like a sum of two normal distributions with means of `0.5` and `-0.5`. The sentiment predicted by `RoBERTa` follows an almost uniform distribution, but the negative values appear more frequently and there are visible peaks at `[-1, 0, 1]`. Let's now take a look at the sentiment distributions per party (excluding the zero-sentiment quotes from `VADER`):
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/sentiment-distribution-per-party.png"><img style="width:100%" src="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/sentiment-distribution-per-party.png"/></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/sentiment-distribution-per-party.png"><img style="width:100%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/sentiment-distribution-per-party.png"/></a></div>
 
 The results are similar for both parties, but not totally identical. On average the Democrats' quotations have a slightly more positive sentiment than those of the Republicans. A t-test shows that the gap in the means is statistically significant, returning `p-value < 1e-200` for both `RoBERTa` and `VADER` distributions. Another interesting observation is that the Republicans tend to have more highly positive (`> 0.5`) and highly negative (` < -0.5`) quotes. This is especially visible in the `RoBERTa` plot - we see clear peaks on the left and right ends of the distribution. Gustave Le Bon shows in *“The Crowd: A Study of the Popular Minds”* that emotions play a crucial role in mass communication and from our analysis it seems that the Republican politicians share his point of view.
 
@@ -92,7 +92,7 @@ Before proceeding, we would like to clarify a possible misunderstanding of the r
 
 Let’s move on to the actual results of the analysis. We will focus on the `RoBERTa` sentiment analysis, as the `VADER` results contain much more 0-sentiment predictions which makes them less interesting for performing a per-party comparison. Sentiment per topic is visualized below:
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/Sentiment per topic (RoBERTa).png"><img style="width:100%" src="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/Sentiment per topic (RoBERTa).png" /></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/Sentiment per topic (RoBERTa).png"><img style="width:100%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/Sentiment per topic (RoBERTa).png" /></a></div>
 
 What can we see? Firstly, we can notice how negative sentiment exceeds positive: one reason for this might be that quotes are taken from news articles, which usually talk more about problems than positive events, just because they sell better. 
 
@@ -102,7 +102,7 @@ Among the topics with the most positive sentiment we see traditional values - th
 
 Looking for topics with remarkable differences in sentiment across parties, we see how the Democrats tend to have a more negative attitude towards the `guns` topic than the Republicans. As stated before, this does not necessarily mean that Democrats are against guns, but making stricter rules on guns is part of their campaign, so we can infer that, and other [studies](https://www.pewresearch.org/fact-tank/2021/09/13/key-facts-about-americans-and-guns/) confirm it also about their supporters.
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/pew2.png"><img style="width:60%" src="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/pew2.png" /></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/pew2.png"><img style="width:60%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/pew2.png" /></a></div>
 
 Democrats used much more positive sentiment than Republicans when considering topics such as Hilary Clinton, Obama, Joe Biden, and the Democratic Party which also matches the expectations. A significant gap between the two parties can be also observed in the 'taxes' topic. However, in this case, results might be quite counterintuitive: one might have expected Republicans to have a more negative approach towards taxes as lower are among their primary postulates, but in our analysis Democrats were the ones with a stronger negative sentiment towards the topic of taxation.
 
@@ -112,7 +112,7 @@ The final aspect we decided to analyze is how the two different parties speak to
 
 Let’s start with the different lexicon used. The first analysis we did was on the distribution of words length.
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/words_length_dist-1.png"><img style="width:60%" src="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/words_length_dist-1.png"/></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/words_length_dist-1.png"><img style="width:60%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/words_length_dist-1.png"/></a></div>
 
 As we can see, the difference is almost none. Still, there’s a statistically significant difference between the two average lengths of words in quotes from Republican vs. Democratic speakers (p-value of ~0.0). This might suggest the use of slightly more complex words by Democratics, assuming that a longer-term is also more complex.
 
@@ -123,13 +123,13 @@ A sentence is not just about the words in it, but how they're put together as we
 3. Text Standard: based upon a combination of all the library's tests, returns the estimated school grade level required to understand the text.
 4. Reading time: returns the reading time of the given text—Assumes 14.69ms per character.
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/complexity_metrics_14-1.png"><img style="width:80%" src="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/complexity_metrics_14-1.png"/></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/complexity_metrics_14-1.png"><img style="width:80%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/complexity_metrics_14-1.png"/></a></div>
 
 The result is stable across years and metrics. It seems to suggest just one thing: there’s a substantial difference in the complexity and readability of quotes from the two parties, and usually, Republican ones are easier to understand, as well as faster to read, even though reading time shows the smallest gap of the four metrics. We then repeated the same analysis but just to Barack Obama and Donal Trump's quotes, the two most popular speakers from the two parties. What we obtained were exactly the same results. Does this outcome make sense? Many articles covered this topic and what turned out to be transparent in all of them is that Republicans and Democrats have become more and more polarized, with entirely different opinions and languages ( [Why Democrats and Republicans Speak Different Languages. LIterally. - The Atlantic](https://www.theatlantic.com/politics/archive/2016/07/why-democrats-and-republicans-literally-speak-different-languages/492539/), [Democrats and Republicans No Longer Speak the Same Language - The New York Times](https://www.nytimes.com/2021/04/09/opinion/infrastructure-democrats-republicans.html), [Why Democrats and Republicans Use Different Words - Business Insider](https://www.businessinsider.com/political-language-rhetoric-framing-messaging-lakoff-luntz-2017-8?r=US&IR=T)).  
 
 Considering all this, we should probably have not expected anything else but a significant gap. Why though Democrats use more complex sentences? Getting back to the rhetoric principle that a speaker adapts to his supporters, does this suggest that Republicans’  defenders are less literate? Accordingly to this plot and this [research from Pew Research Center](https://www.pewresearch.org/politics/2016/04/26/a-wider-ideological-gap-between-more-and-less-educated-adults/), yes.
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/pew3.png"><img style="width:80%" src="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/pew3.png"/></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/pew3.png"><img style="width:80%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/pew3.png"/></a></div>
 
 ## Pulling all together: creating the final party classifier.
 
