@@ -4,6 +4,8 @@ This repository contains a data analysis project for CS-401 Applied Data Analysi
 
 Click [here](https://eliafantini.github.io/CS-401-Applied-Data-Analysis-Project-2021/) for the Data-story.
 
+The homeworks folder includes two homeworks that were done during the semester as well.
+
 ### Authors
 
 - Maciej Styczeń - maciej.styczen@epfl.ch
