@@ -17,19 +17,19 @@ We made use of information available from [Wikidata](https://www.wikidata.org/wi
 
 Below, you can see a couple of sample quotations from the dataset and a plot of the distribution of quotations from 2015 to 2020.
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/dataframe-sample.png"><img style="width:60%" src="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/dataframe-sample.png"></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/docs/figures/dataframe-sample.png"><img style="width:60%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/docs/figures/dataframe-sample.png"></a></div>
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/quotes-accross-time.png"><img style="width:100%" src="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/quotes-accross-time.png"></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/docs/figures/quotes-accross-time.png"><img style="width:100%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/docs/figures/quotes-accross-time.png"></a></div>
 
 ## A deep dive into the data: what are the trending topics?
 
 Previous to any more profound analysis, the most important thing we could do was understand what the two parties talked about. What are the main problems, topics, trends, and events of the United States? How do politicians address them? First, let’s look at the “big words”, those words that are always used and that you will most likely run into if you’re reading a sentence told by whatever politician.
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/wordcloud_all.png"><img style="width:75%" src="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/wordcloud_all.png"/></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/figures/wordcloud_all.png"><img style="width:75%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/figures/wordcloud_all.png"/></a></div>
 
 Then, we try to look for a difference between the two parties. We divide the quotes into two groups based on the party affiliation of the speaker. Then we take the 500 most common words from the first wordcloud, and compare their frequencies between the parties. We divide the per-party word frequencies by the global word frequencies to obtain the relative frequencies per party. We then plot two new wordclouds, now using the relative frequenies instead of total word counts as the weights.
  
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/wordcloud_comparison.png"><img style="width:100%" src="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/wordcloud_comparison.png"></a></div>
+<div style="text-align:center"><a href="/docs/figures/wordcloud_comparison.png"><img style="width:100%" src="/docs/figures/wordcloud_comparison.png"></a></div>
 
 The wordclouds clearly visualize the difference in the vocabulary used by the members of the two American parties. 
 
@@ -50,7 +50,7 @@ To achieve that, we first tried to use a transfer-learning approach: train a cla
 We then proceeded with unsupervised clustering using [`BERTopic`](https://github.com/MaartenGr/BERTopic). This topic modeling technique leverages transformers and c-TF-IDF to create dense clusters allowing for easily interpretable topics while keeping essential words in the topic descriptions.
 The following plot summarizes the interesting results we obtained from clustering.
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/topic-frequency-by-party.png"><img style="width:90%" src="/CS-401-Applied-Data-Analysis-Project-2021/docs/figures/topic-frequency-by-party.png"/></a></div>
+<div style="text-align:center"><a href="/figures/topic-frequency-by-party.png"><img style="width:90%" src="/figures/topic-frequency-by-party.png"/></a></div>
 
 The first thing worth noting from the stacked plot is the x-axis, reporting the macro-topics. Since this is the result of unsupervised clustering, those are the most frequent themes covered by representatives in their speeches. In the overall top 3, we have racial discrimination, nuclear weapons, and Russiagate.
 
