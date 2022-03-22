@@ -25,7 +25,7 @@ Below, you can see a couple of sample quotations from the dataset and a plot of 
 
 Previous to any more profound analysis, the most important thing we could do was understand what the two parties talked about. What are the main problems, topics, trends, and events of the United States? How do politicians address them? First, let’s look at the “big words”, those words that are always used and that you will most likely run into if you’re reading a sentence told by whatever politician.
 
-<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/wordcloud_all.png"><img style="width:75%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/datastory_figures/wordcloud_all.png"/></a></div>
+<div style="text-align:center"><a href="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/figures/wordcloud_all.png"><img style="width:75%" src="/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/figures/wordcloud_all.png"/></a></div>
 
 Then, we try to look for a difference between the two parties. We divide the quotes into two groups based on the party affiliation of the speaker. Then we take the 500 most common words from the first wordcloud, and compare their frequencies between the parties. We divide the per-party word frequencies by the global word frequencies to obtain the relative frequencies per party. We then plot two new wordclouds, now using the relative frequenies instead of total word counts as the weights.
  
