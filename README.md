@@ -2,7 +2,7 @@
 
 This repository contains a data analysis project for CS-401 Applied Data Analysis at EPFL.
 
-Click [here](https://eliafantini.github.io/CS-401-Applied-Data-Analysis-Project-and-Homeworks-2021/) for the Data-story.
+Click [here](https://dxts.github.io/ada-2021-project-datastory/) for the Data-story.
 
 The homeworks folder includes two homeworks that were done during the semester as well.
 
