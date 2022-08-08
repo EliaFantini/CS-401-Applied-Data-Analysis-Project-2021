@@ -55,7 +55,7 @@ After preprocessing we have a dataset of 1.6m quotations of US politicians, asso
 
 #### Method:
 
-To get an initial understanding of what topics do politicians often mention, we performed a word frequency analysis (see `frequency_analysis.ipynb`). The results are visualized in the figure below:
+To get an initial understanding of what topics do politicians often mention, we performed a word frequency analysis. The results are visualized in the figure below:
 ![Wordcloud for politicans](figures/wordcloud_all.png)
 
 To achieve that, we first tried to use a transfer-learning approach: train a classifier on the data obtained from the [Manifesto-Project dataset](https://manifestoproject.wzb.eu), which provides sentences of the two parties' manifestos over years 2012, 2016, and 2020, labeled manually by experts to one of fifteen different topics/categories. Unfortunately, the data was too different from ours and thus the resulting accuracy was not satisfying. 
