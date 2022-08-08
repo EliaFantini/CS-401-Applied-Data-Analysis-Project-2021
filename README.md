@@ -42,8 +42,6 @@ After preprocessing we have a dataset of 1.6m quotations of US politicians, asso
 
 ![Sample from the US Politicians dataset](figures/dataframe-sample.png)
 
-Please consult `preprocessing.ipynb` for the code and a more extensive explanation of the preprocessing steps.
-
 ## Data analysis performed
 
 ### Area 1: Topic labeling
@@ -84,7 +82,7 @@ Labeling the quotations as positive/negative, often referred to as sentiment ana
 
 #### Method:
 
-Utilizing the `Textstat` library we added to each quotes different readability, complexity, and grade level metrics. Thanks to these statistics we might see if there's a significant difference between speakers from different parties, as well as differences between people with identical affiliations but different backgrounds. Some analysis has already been performed, please see `exploratory_analysis.ipynb`.
+Utilizing the `Textstat` library we added to each quotes different readability, complexity, and grade level metrics. Thanks to these statistics we might see if there's a significant difference between speakers from different parties, as well as differences between people with identical affiliations but different backgrounds. 
 
 ### Area 4: Predicting speaker's political affiliation
 
@@ -129,7 +127,7 @@ conda install *PACKAGE_NAME*
 ```
 Some packages might require more complex installation procedures (especially [pytorch](https://pytorch.org/)). If the above command doesn't work for a package, just google "How to install *PACKAGE_NAME* on *YOUR_MACHINE'S_OS*" and follow those guides.
 
-Finally, run the jupyter notebooks **ADA_project.ipynb**. 
+Finally, run the jupyter notebook **ADA_project.ipynb**. 
 
 ## Files description
 
