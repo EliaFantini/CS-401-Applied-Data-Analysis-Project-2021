@@ -16,7 +16,7 @@ Since trying to answer the previous questions on a global scale would be too big
 
 This project was done for the EPFL course [CS-401 Applied data analysis](https://edu.epfl.ch/coursebook/en/applied-data-analysis-CS-401) (2021/2022) and most of the data was taken from [Quotebank dataset](https://zenodo.org/record/4277311#.YvDUCPjP3tU), a corpus of quotations from a decade of news.
 
-The final results of the project were put together into a **Data-story**. You can read it by clicking [here](https://dxts.github.io/ada-2021-project-datastory/).
+The final results of the project were put together into a **Data-story**. You can read it by clicking [here](https://eliafantini.github.io/ada-2021-project-datastory/).
 
 ## Authors
 
